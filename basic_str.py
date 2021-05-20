@@ -202,4 +202,4 @@ if __name__ == "__main__":
     #search_methods()
     #split_join_methods()
     #check_method()
-    align_methods()
+    #align_methods()

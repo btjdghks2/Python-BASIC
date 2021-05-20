@@ -18,7 +18,7 @@ def bool_ex(): # bool 자료형
 
     # bool 캐스팅
     print("정수형:", bool(10), bool(0))
-    print("실수형:", bool(3.14), bool(0.0)
+    print("실수형:", bool(3.14), bool(0.0))
     print("문자열:", bool("Python"), bool(""))
     print("순차형:", bool([1, 2, 3]), bool([]))
     print("Map:", bool({"a": 2}), bool({}))

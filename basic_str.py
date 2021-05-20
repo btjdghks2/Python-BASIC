@@ -1,13 +1,15 @@
+
+
 def define_str(): # 문자열의 정의
     # 한 줄 문자열의 정의
     s1 = "Hello Python" # 쌍따옴표("), 홀따옴표(') 모두 가능
-    s2 = str("Hello Python") # 타입 함수 이용 todtjd
-    s3 = str(3.14159) # 타 타임을 문자열로 변환
+    s2 = str("Hello Python") # 타입 함수 이용 생성
+    s3 = str("3.14159") # 타 타입을 문자열로 변환
 
     print(s1, s2, s3)
     print(type(s1),type(s2),type(s3))
 
-    print("s1은 str의 객체?", isinstance((s1,str)))
+   # print("s1은 str의 객체?", isinstance((s1,str)))
 
     # 여러 줄 문자열의 정의
     # 쌍따옴표 세 개("""), 홀따옴표 세개(''')
@@ -115,13 +117,14 @@ def search_methods():
     print("surl이 https://로 시작?", surl.startswith("https://"))
     # 검색시 시작 문자열을 여러 개 중 한개로 비교할 때
     print("ftp가 http:// or https://로 시작?",
-          ftp.startswith("http://", "https//"))
-    print("url이 http:// or https://로 시작?"
-          url.startswith(("http://", "https://"))
+          ftp.startswith(("http://", "https//")))
+    print("url이 http:// or https://로 시작?",
+          url.startswith(("http://", "https://")))
+
     print("url이 naver.com으로 끝나는가?",url.endswith("naver.com"))
     # startswith, endswith로 검색 범위를 제한할 수 있다.
 
-    print("ftp의 0~ 20 영역이 ftp.으로 시작?"
+    print("ftp의 0~ 20 영역이 ftp.으로 시작?",
           ftp.startswith("ftp.",6,20)) # 6~20 경계 영역이 ftp. 으로 시작
 
 def modify_replace_methods():
@@ -129,9 +132,9 @@ def modify_replace_methods():
     문자열 수정, 치환관련 메서드들
     """
     s= "            Alice and the Heart Queen       "
-    print("STRIP:[",s.strip() "]", sep="") # 앞 뒤의 공백 문자 제거
-    print("LSTRIP:[", s.lstrip()"]", sep = "") # 왼쪽(앞)의 공백 문자 제거
-    print("RSTRIP:[", s.rstrip()"]", sep = "")  # 오른쪽(뒤)의 공백 문자 제거
+    print("STRIP:[",s.strip() ,"]", sep="") # 앞 뒤의 공백 문자 제거
+    print("LSTRIP:[", s.lstrip(),"]", sep = "") # 왼쪽(앞)의 공백 문자 제거
+    print("RSTRIP:[", s.rstrip(),"]", sep = "")  # 오른쪽(뒤)의 공백 문자 제거
 
     # 기본적으로 strip은 공백문자를 제거, -> 임의의 문자열을 제거 가능
     s = "--------------Alice and the Heart Queen------------------"
@@ -149,11 +152,11 @@ def split_join_methods():
     """
     s = "Ham and Cheese and Brreads and Ketchup"
     print("원본:", s)
-    print("SPLIT:", s.split())) # 기본적으로 공백문자를 기준으로 분리
+    print("SPLIT:", s.split()) # 기본적으로 공백문자를 기준으로 분리
     item = s.split(" and ") # 분할 시 " and "를 기준올 분리
-    print("SPLIT:", item);
+    print("SPLIT:", item)
 
-    item = s.split(" and ", 2) # " and " 구분자를 기분으로 앞으로부터 2개만 추출
+    items = s.split(" and ", 2) # " and " 구분자를 기분으로 앞으로부터 2개만 추출
     print(items)
     items = s.rsplit(" and ", 2) # " and " 구분자를 기준으로 뒤로부터 2개만 추출
     print(items)
@@ -180,7 +183,7 @@ def check_method(): # 판별 관련 -> is 계열 메서드 -> bool
         print("python".islower())   # 전부 소문자?
         print("Python Programming".istitle()) # 문자열이 title 형태인가?
 
-def align_methods();
+def align_methods():
     """
     문자열 정렬 메서드
     """
@@ -196,10 +199,10 @@ def align_methods();
                                            # 자리수는 넘쳐도 에러나지 않음
 
 if __name__ == "__main__":
-    #define_str()
-    #string_oper()
-    #transform_mathods()
-    #search_methods()
-    #split_join_methods()
-    #check_method()
-    #align_methods()
+    define_str()
+    string_oper()
+    transform_mathods()
+    search_methods()
+    split_join_methods()
+    check_method()
+    align_methods()

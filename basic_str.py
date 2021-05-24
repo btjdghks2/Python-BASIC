@@ -63,6 +63,7 @@ def string_oper(): # 문자열 연산
 
     # 연결(+) -> 산술연산이 아님에 유의
     print(str1 + "programming")
+
     # 반복(*)
     print(str1 * 3)
 

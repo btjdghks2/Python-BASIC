@@ -27,3 +27,4 @@ print("global g:", g)
 print(dir())    # globals
 # 내장 영역의 확인
 print("내장 영역:", dir('__builtins__'))
+

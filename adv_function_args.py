@@ -38,18 +38,17 @@ print(get_total(1, 3, 5, 7, 9))
 # 4. 나머지는 합산하지 않음
 # 5. 재귀 하지 않음
 
-def get_total2(*area):
+def get_total2(*args):
     total = 0
-    for x in args():
-        if isinstance(x, (int, float)): # 인수 값이 int or float
+    for x in args:
+        if isinstance(x, (int, float)): # 인수값이 int or float
             total += x
-        elif isinstance(x, (list, tuple)): # 인수가 list or tuple
+        elif isinstance(x, (list, tuple)):   # 인수가 list or tuple
             for item in x:
                 if isinstance(item, (int, float)):
                     total += item
     return total
-    # TODO: logic
-    return total
+
 
 print(get_total2(1,2,3,4,5))
 print(get_total2(1,2,"3",4,5))

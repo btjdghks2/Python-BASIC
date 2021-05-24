@@ -35,8 +35,8 @@ def for_ex():
     a = ["cat","cow","tiger"]
     for animal in a:
         print(animal, end=" ")
-    else # 반복문이 break 되지 않고 정상 종료시 마지막에 수행
-        print()
+    else: # 반복문이 break 되지 않고 정상 종료시 마지막에 수행
+        print("cat")
 
     # 반복시 요소와 함께 인덱스도 함께 필요할 때 -> enumerate 함수 -> (인덱스, 요소) 튜플
     for  index, color in enumerate(['red', 'blue','green','black','whie']): # (인덱스, 요소) 튜플
@@ -92,6 +92,7 @@ def while_ex():
     *****
     ******
     """
+    pass
 
 
 

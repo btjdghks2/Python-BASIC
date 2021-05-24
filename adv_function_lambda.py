@@ -14,7 +14,7 @@ else:
     print()
 
 # lambd를 이용한 sort 키함수 정의
-strings = "Life is too short, you need Python".upper().replace(",","").split
+strings = "Life is too short, you need Python".upper().replace(",","").split()
 print("STRINGS:", strings)
 # 문자열을 길이를 기준으로 역순 정렬
 def strlen(x):

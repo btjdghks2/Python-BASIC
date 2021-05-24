@@ -74,8 +74,8 @@ def format_date():
 
     # str -> datetime : strptime()
     s = "2021-05-24 17:00:00"
-    dt = datetime.datetime.strptime.strptime(s,   # 변환할 문자열
-                                            "%Y-%m-%d %H:%S")
+    dt = datetime.datetime.strptime(s,  # 변환할 문자열
+                                    "%Y-%m-%d %H:%M:%S")
     print(dt,type(dt))
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ def func():
 class MyClass:
 
 # 심볼 테이블 확인
-    def symbol_table():
+ def symbol_table():
     # 글로벌 심볼 테이블 확인
     print(globals())
     print(type(globals()))
@@ -58,8 +58,8 @@ def objec_id():
     """
     # 불변 자료형 : 두값이 같으면 같은 객체
     i1 = 10
-    12 = int(10)
-    print("int:", hex(id(11), hex(id(12))))
+    i2 = int(10)
+    print("int:", hex(id(11)), hex(id(12)))
 
     # 가변 자료형 : 값이 같아도 별개의 객체
     lst1 = [1, 2, 3]
@@ -73,7 +73,56 @@ def objec_id():
     print("불변객체의 비교:", i1==i2, i1 is i2) # 값은 같고(동등), 객체도 같다(동일)
     print("불변객체의 비교:", lst1 == lst2, lst1 is lst2) # 같은 값고, 객체는 다르다
 
+def object_copy():
+    """
+    객체의 복제
+    :return:
+    """
+    import copy
+
+    # 레퍼런스 복사 : 객체의 주소값만 복사 -> 같은 객체
+    a = 1
+    b = a
+    print("a is b?", a is b)
+
+    # 얕은 복제
+    a = [1, 2, 3]
+    b = [4, 5, 6]
+    x = [a, b, 100]
+    print("a:", a)
+    print("b:", b)
+    print("x:", x)
+    y = x
+
+    print("x is t?", x is y) # 다른 객체다
+    x[0][2] = 10
+    print("x", x)
+    print("y", y)
+
+    y= copy.copy(x)
+    print("얕은 복제: x is y?", x is y) # 다른 객체
+    print("x", x)
+    print("y", y)
+    x[0][2] = 3
+    print("x", x)
+    print("y", y)
+    # 객체 자체는 별개의 객체로 복제가 되었으나
+    # 내부 요소 객체는 동일 객체
+    print("x[0] is y[0]?", x[0] is y[0])
+
+    # deepcopy(깊은 복제)
+    # 가장 하위의 요소로부터 복제 새객체를(재귀적으로) 만들어서 객체를 재구성
+    y = copy.deepcopy(x)
+    print("x is y?", x is y)
+    print("x[0] is y[0]?", x[0] is y[0])
+    print("x[1] is y[1]?", x[1] is y[1])
+
+    x[0][2] = 20
+    print("x:", x)
+    print("y:", y)
+
 if __name__=="__main__":
-    symbol_table()
-    ref_count()
-    object_id()
+    #symbol_table()
+    #ref_count()
+    #object_id()
+    object_copy()

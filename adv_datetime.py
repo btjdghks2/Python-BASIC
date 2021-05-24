@@ -1,0 +1,63 @@
+# datetime 모듈
+# datetime 클래스
+# dete 클래스
+# time 클래스
+import datetime # 모듈 임포트
+
+def get_datetime():
+    # 시간의 획득: 현재 날짜와 시간
+    now = datetime.datetime.now()
+    print(now)
+
+    # 생성자 이용, 직접 날짜 지정
+    dt = datetime.datetime(1999, 12, 31) # 최소 년월일은 지정
+    print(dt)
+
+    # datetime의 주요 속성들
+    print("date관련 속성:", dt.year,dt.month, dt.day)
+    print("time관련 속성:", dt.hour, dt.minute, dt.second, dt.microsecond)
+
+    # 요일 확인: weekday - 월: 0~ 일:6
+    print("오늘은 무슨 요일?", now.weekday())
+
+    # datetime 객체는 date rorcp + time 객체
+    print(now.date(), type(now.date())) # 날짜 관련 속성을 가진 date 객체
+    print(now.time(), type(now.time()))  # 시간 관련 속성을 가진 time 객체
+
+    # date 객체는 datetime 클래스의 날짜 관련 속성과 요일 메서드 이용
+    # time 객체는 datetime 클래스의 시간 관련 속성 이용
+    nowdate = datetime.datetime.now().date()
+    nowtime = datetime.datetime.now().time()
+
+    print("date:", nowdate.year, nowdate.month, nowdate.day, nowdate.weekday())
+    print("time:", nowdate.hour, nowdate.minute, nowdate.second, nowdate.microsecond)
+
+def timedelta_ex():
+    """
+    timedalta: 두 datetime 사이의 간격 정보 객체
+    :return:
+    """
+    current = datetime.datetime.now()
+    print("CURRENT:", current)
+    past = datetime.datetime(1999,12,31)
+    print("PAST:", past)
+    # 두 datetime은 대소 비교가 가능
+    print("CURRENT가 past 이후?", current > past)
+
+    # datetime - datetime : timedelta (간격값)
+    diff = current - past
+    print(diff, type(diff))
+
+    # timedelta의 속성
+    print("timedelta:", diff.days, diff.seconds, diff.microseconds)
+    print("total seconds:", diff.total_seconds()) # 모든 속성을 초단위로 모아서 변환
+
+    # datetime + timedelta : 새 ㅇㅁㅅㄷ샤ㅡㄷ
+    # 현재 시간에서 100일 후 정보
+    print("current:", current)
+    diff = datetime.timedelta(100, 0,0) # 100 일의 간격 값
+    print("100일 후:", current + diff)
+
+if __name__ == "__main__":
+    # get_datetime()
+    timedelta_ex()
